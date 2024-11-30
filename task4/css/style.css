@@ -1,0 +1,256 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #d9fdd3, #b3e6b5); /* Light green gradient */
+    transition: background 0.3s, color 0.3s;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    color: black;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+#theme-label {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Task Form */
+form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+form input,
+form select,
+form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+form button {
+    background-color: #2e7d32;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+
+/* Task List Section */
+.tasks {
+    margin-top: 20px;
+    color: black;
+}
+
+.tasks h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.date-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #e8f5e9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.date-group h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+    color: #1b5e20;
+    font-weight: bold;
+    border-left: 4px solid #4caf50;
+    padding-left: 10px;
+}
+
+.date-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.date-group li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.date-group li:hover {
+    transform: scale(1.02);
+    background-color: #f1f8e9;
+}
+
+.date-group li span {
+    flex: 1;
+    color: #333;
+    font-size: 1rem;
+}
+
+.date-group li span.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.priority-high {
+    font-weight: bold;
+    color: #e53935;
+}
+
+.priority-medium {
+    font-weight: bold;
+    color: #ffb300;
+}
+
+.priority-low {
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.date-group li button {
+    border: none;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.date-group li button:hover {
+    transform: scale(1.1);
+}
+
+.date-group li button.complete {
+    background-color: #4caf50;
+    color: white;
+}
+
+.date-group li button.complete:hover {
+    background-color: #388e3c;
+}
+
+.date-group li button.delete {
+    background-color: #e53935;
+    color: white;
+}
+
+.date-group li button.delete:hover {
+    background-color: #b71c1c;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: linear-gradient(to bottom right, #1b5e20, #003300); 
+    color: #f1f1f1; 
+}
+
+body.dark-mode .container {
+    background: linear-gradient(to bottom right, #d9fdd3, #b3e6b5); 
+    color: #f1f1f1;
+    box-shadow: none;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+    border-color: #4caf50;
+}
+
+body.dark-mode button:hover {
+    background-color: #1b5e20;
+}
+
+body.dark-mode .date-group {
+    background-color: #003d00; 
+    color: #e8f5e9; 
+}
+
+body.dark-mode .date-group h3 {
+    color: #f1f1f1;
+}
+

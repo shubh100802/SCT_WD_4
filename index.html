@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced To-Do App</title>
+    <link rel="stylesheet" href="task4/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+            <div class="theme-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span id="theme-label">Dark Mode</span>
+            </div>
+        </header>
+
+        <section class="task-section">
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="Enter task..." required>
+                <input type="datetime-local" id="task-due" required>
+                <select id="task-priority">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+
+        <section class="tasks">
+            <h2>Your Tasks</h2>
+            <input type="text" id="search-input" placeholder="Search tasks...">
+            <div id="date-groups"></div>
+        </section>
+    </div>
+    <script src="task4/js/script.js"></script>
+</body>
+</html>
